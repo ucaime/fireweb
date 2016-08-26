@@ -17,7 +17,7 @@ var gulp = require('gulp'),
 
 //编译less文件
 gulp.task('less', function(){
-    return gulp.src('src/css/*.less')
+    return gulp.src('src/css/app.less')
         .pipe(less())
         .pipe(gulp.dest('src/css'));
 });
