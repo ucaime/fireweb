@@ -10,15 +10,10 @@ var gulp = require('gulp'),
     rev = require('gulp-rev'),
     rename = require('gulp-rename'),
     uglify = require('gulp-uglify'),
-    notify = require('gulp-notify'),//加控制台文字描述用的
-    usemin = require('gulp-usemin');
 
-//拷贝相关文件
-gulp.task('bulid', function () {
-    return gulp.src(['bower_components/bootstrap/fonts/*'])
-        // .pipe(rename({dirname: ''}))//如遇到不同目录的内容合并到一个目录里，需要用的rename
-        .pipe(gulp.dest('src/fonts'));
-});
+    //加控制台文字描述用的
+    notify = require('gulp-notify'),
+    usemin = require('gulp-usemin');
 
 //编译less文件
 gulp.task('less', function(){
@@ -34,7 +29,7 @@ gulp.task('less', function(){
 //        .pipe(gulp.dest('src/js'));
 //});
 
-//删除dist目录,发现clean没有del好用
+//删除dist目录
 gulp.task('del', function() {
     return gulp.src(['dist'], {read: false})
         .pipe(del());
